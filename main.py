@@ -45,6 +45,5 @@ def receive_token(message):
         "2. Отправьте /start"
     )
 
-bot.set_webhook(url=f'https://bot-8mr1.onrender.com/{TOKEN}')  # 👈 URL дұрыстап қой
+bot.set_webhook(url=f'https://bot-8mr1.onrender.com/{TOKEN}')
     app.run(host='0.0.0.0', port=port)
-
