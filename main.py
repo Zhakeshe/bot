@@ -45,4 +45,6 @@ def receive_token(message):
         "2. Отправьте /start"
     )
 
-bot.polling(none_stop=True)
+bot.set_webhook(url=f'https://bot-8mr1.onrender.com/{TOKEN}')  # 👈 URL дұрыстап қой
+    app.run(host='0.0.0.0', port=port)
+
