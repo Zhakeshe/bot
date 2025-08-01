@@ -1,11 +1,22 @@
 import telebot
 import subprocess
 from utils import create_bot_file, is_token_valid
+from flask import Flask
 
 API_TOKEN = '8276354521:AAGKLwBNmOFgkv3bda9lCjqyWzREVyXH8HM'  # ← өз BotFather токеніңізді қойыңыз
 bot = telebot.TeleBot(API_TOKEN)
 bot.remove_webhook()  # <-- міне осы жолды қосыңыз
+app = Flask(__name__)
 
+@app.route('/')
+def home():
+    return "Сервер жұмыс істеп тұр!"
+
+if __name__ == '__main__':
+    import os
+    port = int(os.environ.get('PORT', 5000))  # Render портты ENV арқылы береді
+    app.run(host='0.0.0.0', port=port)
+    
 @bot.message_handler(commands=['start'])
 def start(message):
     text = (
